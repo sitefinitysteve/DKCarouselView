@@ -42,6 +42,9 @@
     [self.carouselView setDidChangeBlock:^(DKCarouselView *view, NSInteger index) {
         NSLog(@"%@, %zd", view, index);
     }];
+    [self.carouselView setDidScrollBlock:^(DKCarouselView *view, NSInteger offset) {
+        NSLog(@"%@, %zd", view, offset);
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

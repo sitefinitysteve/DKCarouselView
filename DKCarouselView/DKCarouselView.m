@@ -87,6 +87,7 @@ typedef void(^DKCarouselViewTapBlock)();
 @property (nonatomic, strong) NSTimer *autoPagingTimer;
 @property (nonatomic, copy) DKCarouselViewDidSelectBlock didSelectBlock;
 @property (nonatomic, copy) DKCarouselViewDidChangeBlock didChangeBlock;
+@property (nonatomic, copy) DKCarouselViewDidScrollBlock didScrollBlock;
 
 @end
 
@@ -284,6 +285,10 @@ typedef void(^DKCarouselViewTapBlock)();
     _didChangeBlock = didChangeBlock;
 }
 
+- (void)setDidScrollBlock:(DKCarouselViewDidScrollBlock)didScrollBlock {
+    _didScrollBlock = didScrollBlock;
+}
+
 - (void)setAutoPagingForInterval:(NSTimeInterval)timeInterval {
     assert(timeInterval >= 0);
     if (self.autoPagingTimer.timeInterval == timeInterval) {
@@ -404,6 +409,10 @@ typedef void(^DKCarouselViewTapBlock)();
                     [self insertNextPage];
                 }
             }
+        }
+        
+        if (self.didScrollBlock != nil) {
+            self.didScrollBlock(self, scrollView.contentOffset.x);
         }
     }
 }
