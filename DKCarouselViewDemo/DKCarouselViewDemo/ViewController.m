@@ -33,9 +33,10 @@
         [items addObject:urlAD];
     }
     self.carouselView.defaultImage = [UIImage imageNamed:@"DefaultImage"];
-//    [self.carouselView setFinite:YES];
+    [self.carouselView setFinite:YES];
+    [self.carouselView setBounce: NO];
     [self.carouselView setItems:items];
-    [self.carouselView setAutoPagingForInterval:2];
+    //[self.carouselView setAutoPagingForInterval:2];
     [self.carouselView setDidSelectBlock:^(DKCarouselItem *item, NSInteger index) {
         NSLog(@"%zd",index);
     }];

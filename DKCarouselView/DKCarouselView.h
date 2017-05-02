@@ -57,6 +57,7 @@ typedef void(^DKCarouselViewDidScrollBlock)(DKCarouselView *view, NSInteger offs
 
 // set infinite slide or not, defaults to NO.
 @property (nonatomic, assign, getter = isFinite) BOOL finite;
+@property (nonatomic, assign) BOOL bounce;
 
 // set selected page index
 @property (nonatomic, assign) NSUInteger selectedPage;

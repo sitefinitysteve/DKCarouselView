@@ -122,8 +122,8 @@ typedef void(^DKCarouselViewTapBlock)();
     UIScrollView *scrollView = [UIScrollView new];
     scrollView.showsHorizontalScrollIndicator = scrollView.showsVerticalScrollIndicator = NO;
     scrollView.pagingEnabled = YES;
-    scrollView.bounces = NO;
     scrollView.scrollsToTop = NO;
+    scrollView.bounces = _bounce;
     scrollView.delegate = self;
     
     self.indicatorTintColor = [UIColor whiteColor];
@@ -195,8 +195,11 @@ typedef void(^DKCarouselViewTapBlock)();
 
 - (void)setFinite:(BOOL)finite {
     _finite = finite;
-    
-    self.scrollView.bounces = finite;
+}
+
+- (void)setBounce:(BOOL)bounce {
+    _bounce = bounce;
+    self.scrollView.bounces = bounce;
 }
 
 - (void)setIndicatorTintColor:(UIColor *)indicatorTintColor {
