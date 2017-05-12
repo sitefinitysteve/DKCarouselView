@@ -202,6 +202,11 @@ typedef void(^DKCarouselViewTapBlock)();
     self.scrollView.bounces = bounce;
 }
 
+- (void)setScrollEnabled:(BOOL)scrollEnabled {
+    _scrollEnabled = scrollEnabled;
+    self.scrollView.scrollEnabled = scrollEnabled;
+}
+
 - (void)setIndicatorTintColor:(UIColor *)indicatorTintColor {
     _indicatorTintColor = indicatorTintColor;
     
