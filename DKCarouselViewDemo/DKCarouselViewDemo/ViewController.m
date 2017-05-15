@@ -27,8 +27,9 @@
                         ];
     NSMutableArray *items = [NSMutableArray new];
     for (NSString *imageUrl in images) {
-        DKCarouselURLItem *urlAD = [DKCarouselURLItem new];
-        urlAD.imageUrl = imageUrl;
+        DKCarouselViewItem *urlAD = [DKCarouselViewItem new];
+
+        urlAD.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"https://c1.staticflickr.com/9/8428/7855079606_5fc8852562_z.jpg"]];
         
         [items addObject:urlAD];
     }
