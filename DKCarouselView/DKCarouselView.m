@@ -398,7 +398,7 @@ typedef void(^DKCarouselViewTapBlock)();
 #pragma mark - UIScrollView Delegate Methods
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (scrollView.isDragging) {
+    if (scrollView.isDragging) { 
         self.autoPagingTimer.fireDate = [NSDate dateWithTimeIntervalSinceNow:self.autoPagingTimer.timeInterval];
         
         if (self.carouselItemViews.count == 2) {
