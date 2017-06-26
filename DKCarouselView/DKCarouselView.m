@@ -400,7 +400,7 @@ typedef void(^DKCarouselViewTapBlock)();
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     if (scrollView.isDragging) { 
         self.autoPagingTimer.fireDate = [NSDate dateWithTimeIntervalSinceNow:self.autoPagingTimer.timeInterval];
-        
+        /*
         if (self.carouselItemViews.count == 2) {
             if (scrollView.contentOffset.x < kScrollViewFrameWidth) {
                 UIView *previousView = self.carouselItemViews[GetPreviousIndex()];
@@ -414,6 +414,7 @@ typedef void(^DKCarouselViewTapBlock)();
                 }
             }
         }
+         */
         
         if (self.didScrollBlock != nil) {
             self.didScrollBlock(self, scrollView.contentOffset.x);
