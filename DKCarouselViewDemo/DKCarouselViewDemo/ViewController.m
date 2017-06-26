@@ -21,15 +21,13 @@
     [super viewDidLoad];
     
     NSArray *images = @[@"https://c1.staticflickr.com/9/8428/7855079606_5fc8852562_z.jpg",
-                        @"http://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Parang_mountain_image_1.jpg/640px-Parang_mountain_image_1.jpg",
-                        @"http://www.openjpeg.org/samples/Bretagne1.bmp",
-                        @"http://blog.absolutvision.com/wp-content/uploads/2009/10/Gimp_2.6b.jpg"
+                        @"http://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Parang_mountain_image_1.jpg/640px-Parang_mountain_image_1.jpg"
                         ];
     NSMutableArray *items = [NSMutableArray new];
     for (NSString *imageUrl in images) {
         DKCarouselViewItem *urlAD = [DKCarouselViewItem new];
 
-        urlAD.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"https://c1.staticflickr.com/9/8428/7855079606_5fc8852562_z.jpg"]];
+        //urlAD.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"https://c1.staticflickr.com/9/8428/7855079606_5fc8852562_z.jpg"]];
         
         [items addObject:urlAD];
     }
